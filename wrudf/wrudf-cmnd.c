@@ -56,7 +56,7 @@ copyFile(Directory *dir, char* inName, char*newName, struct stat *fileStat)
     uint8_t	p[2048];
 
     fd = open(inName, O_RDONLY);
-    if( fd == 0 ) {
+    if( fd < 0 ) {
 	printf("'%s' does not exist\n", inName);
 	return CMND_FAILED;
     }
